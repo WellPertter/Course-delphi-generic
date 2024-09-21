@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2024/09/21 19:51:07.000.392,=C:\Users\José Arthur\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/09/21 19:52:27.560,=C:\Users\José Arthur\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/09/21 19:53:11.817,C:\Users\José Arthur\Desktop\Course delphi generic\src\view\untMainGeneric.fmx=C:\Users\José Arthur\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2024/09/21 19:53:11.817,C:\Users\José Arthur\Desktop\Course delphi generic\src\view\untMainGeneric.pas=C:\Users\José Arthur\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2024/09/21 19:53:29.635,C:\Users\José Arthur\Desktop\Course delphi generic\bin\Generic.dproj=C:\Users\José Arthur\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
