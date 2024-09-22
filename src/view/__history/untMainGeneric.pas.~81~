@@ -5,7 +5,8 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListBox, FMX.Edit;
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListBox, FMX.Edit, System.Generics.Collections,
+  FMX.Memo.Types, FMX.ScrollBox, FMX.Memo;
 
 type
 
@@ -65,10 +66,19 @@ type
     property name: string read Fname write Setname;
   end;
 
-  TNFe<T> = class
+  TNFe<T : constructor> = class    // diz que o T vai ter um construtor padrão
     FGeneric : T;
+    constructor Create;
     function GetGeneric : T;
   end;
+
+  TTest <T : IInterface> = class // aceita qualquer interface, mas só interface.    <T : TComponent>
+
+  end;
+
+
+  // Aula 06 Tlist
+  // TList<type>  - é genérioc e já está disponível
 
 
 
@@ -83,6 +93,13 @@ type
     Edit1: TEdit;
     Button6: TButton;
     Button7: TButton;
+    Button8: TButton;
+    Button9: TButton;
+    Button10: TButton;
+    Button11: TButton;
+    Button12: TButton;
+    edtAula6: TEdit;
+    Memo1: TMemo;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -90,8 +107,14 @@ type
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
+    procedure Button9Click(Sender: TObject);
+    procedure Button10Click(Sender: TObject);
+    procedure Button11Click(Sender: TObject);
   private
     { Private declarations }
+    ListNum : TList<Integer>;
   public
     { Public declarations }
   end;
@@ -116,6 +139,16 @@ end;
 procedure TKeyValue<T>.SetValue(const Value: T);
 begin
   FValue := Value;
+end;
+
+procedure TForm1.Button10Click(Sender: TObject);
+begin
+  ListNum.Delete(Pred(ListNum.Count));
+end;
+
+procedure TForm1.Button11Click(Sender: TObject);
+begin
+  Memo1.Lines.Clear;
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
@@ -202,14 +235,37 @@ end;
 
 procedure TForm1.Button7Click(Sender: TObject);
 var
+  NFe2: TNFe<String>;
   NFe: TNFe<TPerson>;
 begin
   NFe := TNFe<TPerson>.Create;
   try
-
+    NFe.FGeneric.name := 'Arthur';
+    ShowMessage(NFe.FGeneric.name);
   finally
     NFe.Free;
   end;
+end;
+
+procedure TForm1.Button8Click(Sender: TObject);
+begin
+ ListNum.Add(StrToInt(edtAula6.Text));
+ edtAula6.Text := '';
+end;
+
+procedure TForm1.Button9Click(Sender: TObject);
+var
+  I: Integer;
+begin
+  Memo1.Lines.Clear;
+  for I := 0 to Pred(ListNum.Count) do
+    Memo1.Lines.Add(ListNum[I].ToString);
+
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  ListNum := TList<Integer>.Create;
 end;
 
 { TEnumUtils<T> }
@@ -261,6 +317,11 @@ begin
 end;
 
 { TNFe<T> }
+
+constructor TNFe<T>.Create;
+begin
+  FGeneric := T.Create;
+end;
 
 function TNFe<T>.GetGeneric: T;
 begin

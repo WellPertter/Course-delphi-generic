@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = '.: System Generic :.'
-  ClientHeight = 510
-  ClientWidth = 965
+  ClientHeight = 480
+  ClientWidth = 770
   Position = DesktopCenter
   FormFactor.Width = 320
   FormFactor.Height = 480
@@ -165,13 +165,13 @@ object Form1: TForm1
   object Memo1: TMemo
     Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
     DataDetectorTypes = []
-    Position.X = 207.000000000000000000
-    Position.Y = 249.000000000000000000
-    Size.Width = 298.000000000000000000
+    Position.X = 304.000000000000000000
+    Position.Y = 216.000000000000000000
+    Size.Width = 345.000000000000000000
     Size.Height = 137.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 17
-    Viewport.Width = 290.000000000000000000
+    Viewport.Width = 337.000000000000000000
     Viewport.Height = 129.000000000000000000
   end
   object Button13: TButton
@@ -183,6 +183,5 @@ object Form1: TForm1
     TabOrder = 3
     Text = 'Aula 6 - OnNotify'
     TextSettings.Trimming = None
-    OnClick = Button13Click
   end
 end

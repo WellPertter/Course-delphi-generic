@@ -9,7 +9,7 @@ CRTL + SHIFT + A ( implementar as dependências )
 Comandos
 Assigned(prod1)   -- Verificar se o objeto está criado 
 Inc(I);           -- ++1
-
+pred(list.count)  -- retornar o ultimo número
 
 
 
@@ -60,6 +60,31 @@ tipo primitivos x classes
 
 Obs: é genérico, mas nem tanto assim
 -------
+6# TList
+
+Obs: A lista vai aumentar sua capacidade de forma binária, 0, 1, 2, 4, 8, 16, 32, 64
+Capacity - para verificar
+
+Obs2: A capacity não volta, cuidado se aumentar muito a lista.
+
+Lista tem um evento
+OnNotify
+- Porém tem que criar uma procedure com as exigências do evento;
+
+
+  ListNum.OnNotify := Notification;
+
+procedure TForm1.Notification(Sender: TObject; const Item: Integer;
+  Action: TCollectionNotification);
+begin
+ case Action of
+  cnAdded : Memo1.Lines.Add('O Item ' + Item.ToString + ' foi adicionado');
+  cnRemoved : Memo1.Lines.Add('O Item ' + Item.ToString + ' foi removido');
+  cnExtracted : Memo1.Lines.Add('O Item ' + Item.ToString + ' foi extraido');
+ end;
+end;
+
+O evento foi criado ai
 
 --------
 
