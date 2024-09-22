@@ -16,10 +16,12 @@ object Form1: TForm1
     Size.Height = 527.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
-    TabIndex = 1
+    TabIndex = 2
     TabOrder = 1
     TabPosition = PlatformDefault
     Sizes = (
+      965s
+      478s
       965s
       478s
       965s
@@ -30,7 +32,7 @@ object Form1: TForm1
         end>
       TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 482.000000000000000000
+      Size.Width = 321.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
@@ -217,8 +219,8 @@ object Form1: TForm1
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
-      Size.Width = 483.000000000000000000
+      IsSelected = False
+      Size.Width = 321.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
@@ -233,6 +235,7 @@ object Form1: TForm1
         TabOrder = 9
         Text = 'ENQueue'
         TextSettings.Trimming = None
+        OnClick = Button14Click
       end
       object edtaula7: TEdit
         Touch.InteractiveGestures = [LongTap, DoubleTap]
@@ -261,6 +264,7 @@ object Form1: TForm1
         TabOrder = 8
         Text = 'DEQueue'
         TextSettings.Trimming = None
+        OnClick = Button15Click
       end
       object Button16: TButton
         Position.X = 32.000000000000000000
@@ -271,6 +275,7 @@ object Form1: TForm1
         TabOrder = 7
         Text = 'EXQueue'
         TextSettings.Trimming = None
+        OnClick = Button16Click
       end
       object Button17: TButton
         Position.X = 32.000000000000000000
@@ -281,6 +286,7 @@ object Form1: TForm1
         TabOrder = 6
         Text = 'Peek'
         TextSettings.Trimming = None
+        OnClick = Button17Click
       end
       object Button18: TButton
         Position.X = 32.000000000000000000
@@ -291,20 +297,128 @@ object Form1: TForm1
         TabOrder = 5
         Text = 'TrimExcess'
         TextSettings.Trimming = None
+        OnClick = Button18Click
       end
       object Button19: TButton
         Position.X = 32.000000000000000000
-        Position.Y = 220.000000000000000000
+        Position.Y = 212.000000000000000000
         Size.Width = 137.000000000000000000
         Size.Height = 41.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 4
         Text = 'Count'
         TextSettings.Trimming = None
+        OnClick = Button19Click
       end
       object Button20: TButton
         Position.X = 32.000000000000000000
         Position.Y = 261.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = 'Capacity'
+        TextSettings.Trimming = None
+        OnClick = Button20Click
+      end
+    end
+    object TabItem3: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = True
+      Size.Width = 323.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Aula 8 - TStack'
+      object Button21: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 24.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        Text = 'Push'
+        TextSettings.Trimming = None
+        OnClick = Button21Click
+      end
+      object Button22: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 65.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        Text = 'Pop'
+        TextSettings.Trimming = None
+        OnClick = Button22Click
+      end
+      object memoAula8: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Position.X = 199.000000000000000000
+        Position.Y = 64.000000000000000000
+        Size.Width = 298.000000000000000000
+        Size.Height = 137.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 18
+        Viewport.Width = 290.000000000000000000
+        Viewport.Height = 129.000000000000000000
+      end
+      object Button23: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 145.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'Peek'
+        TextSettings.Trimming = None
+        OnClick = Button23Click
+      end
+      object Button24: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 106.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        Text = 'Extract'
+        TextSettings.Trimming = None
+      end
+      object edtStack: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 17
+        Position.X = 199.000000000000000000
+        Position.Y = 24.000000000000000000
+      end
+      object Button25: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 186.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = 'TrimExcess'
+        TextSettings.Trimming = None
+      end
+      object Button26: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 229.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'Count'
+        TextSettings.Trimming = None
+        OnClick = Button26Click
+      end
+      object Button27: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 269.000000000000000000
         Size.Width = 137.000000000000000000
         Size.Height = 41.000000000000000000
         Size.PlatformDefault = False

@@ -99,7 +99,19 @@ peek ( espiar )   fila.Peek
 count ( contar )
 capacity ( capacidade )
 -------
+8# TStack  (pilha)   Não pode percorrer.  
+O ultimo que era é o primeiro a sair, o contratrário da fila
 
+
+
+
+Push Remove e retorna o topo.
+Pop Remove e retorna o topo.
+Extract
+peek ( espiar ) 
+TrimExcept ( reorganiza a capacidade ) 
+count ( contar )
+capacity ( capacidade )
 
 --------
 

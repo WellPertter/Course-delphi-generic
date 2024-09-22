@@ -113,6 +113,16 @@ type
     Button18: TButton;
     Button19: TButton;
     Button20: TButton;
+    TabItem3: TTabItem;
+    Button21: TButton;
+    Button22: TButton;
+    memoAula8: TMemo;
+    Button23: TButton;
+    Button24: TButton;
+    edtStack: TEdit;
+    Button25: TButton;
+    Button26: TButton;
+    Button27: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -132,6 +142,8 @@ type
     procedure Button14Click(Sender: TObject);
     procedure Button17Click(Sender: TObject);
     procedure Button15Click(Sender: TObject);
+    procedure Button16Click(Sender: TObject);
+    procedure Button18Click(Sender: TObject);
   private
     { Private declarations }
 
@@ -140,6 +152,9 @@ type
 
     // aula 7
     Fila: TQueue<String>;
+
+    // aula 8
+    pilha: TStack<string>;
 
 
     procedure Notification (Sender : TObject; const Item: Integer; Action :TCollectionNotification);
@@ -203,9 +218,19 @@ begin
   Fila.Dequeue;
 end;
 
+procedure TForm1.Button16Click(Sender: TObject);
+begin
+  fila.Extract;
+end;
+
 procedure TForm1.Button17Click(Sender: TObject);
 begin
   memoaula7.Lines.Add(fila.Peek);
+end;
+
+procedure TForm1.Button18Click(Sender: TObject);
+begin
+  fila.TrimExcess;
 end;
 
 procedure TForm1.Button19Click(Sender: TObject);

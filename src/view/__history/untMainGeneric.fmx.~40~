@@ -262,6 +262,7 @@ object Form1: TForm1
         TabOrder = 8
         Text = 'DEQueue'
         TextSettings.Trimming = None
+        OnClick = Button15Click
       end
       object Button16: TButton
         Position.X = 32.000000000000000000
@@ -272,6 +273,7 @@ object Form1: TForm1
         TabOrder = 7
         Text = 'EXQueue'
         TextSettings.Trimming = None
+        OnClick = Button16Click
       end
       object Button17: TButton
         Position.X = 32.000000000000000000
@@ -282,6 +284,7 @@ object Form1: TForm1
         TabOrder = 6
         Text = 'Peek'
         TextSettings.Trimming = None
+        OnClick = Button17Click
       end
       object Button18: TButton
         Position.X = 32.000000000000000000
@@ -292,6 +295,7 @@ object Form1: TForm1
         TabOrder = 5
         Text = 'TrimExcess'
         TextSettings.Trimming = None
+        OnClick = Button18Click
       end
       object Button19: TButton
         Position.X = 32.000000000000000000
