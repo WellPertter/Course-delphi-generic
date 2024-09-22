@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListBox, FMX.Edit, System.Generics.Collections,
-  FMX.Memo.Types, FMX.ScrollBox, FMX.Memo;
+  FMX.Memo.Types, FMX.ScrollBox, FMX.Memo, FMX.TabControl;
 
 type
 
@@ -84,6 +84,9 @@ type
 
 
   TForm1 = class(TForm)
+    TabControl1: TTabControl;
+    TabItem1: TTabItem;
+    TabItem2: TTabItem;
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
@@ -100,6 +103,16 @@ type
     Button12: TButton;
     edtAula6: TEdit;
     Memo1: TMemo;
+    Button13: TButton;
+    Button14: TButton;
+    edtaula7: TEdit;
+    memoaula7: TMemo;
+    Button15: TButton;
+    Button16: TButton;
+    Button17: TButton;
+    Button18: TButton;
+    Button19: TButton;
+    Button20: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -112,9 +125,22 @@ type
     procedure Button9Click(Sender: TObject);
     procedure Button10Click(Sender: TObject);
     procedure Button11Click(Sender: TObject);
+    procedure Button12Click(Sender: TObject);
+    procedure Button13Click(Sender: TObject);
+    procedure Button20Click(Sender: TObject);
   private
     { Private declarations }
+
+
     ListNum : TList<Integer>;
+
+    // aula 7
+    Fila: TQueue<String>;
+
+
+    procedure Notification (Sender : TObject; const Item: Integer; Action :TCollectionNotification);
+
+
   public
     { Public declarations }
   end;
@@ -149,6 +175,18 @@ end;
 procedure TForm1.Button11Click(Sender: TObject);
 begin
   Memo1.Lines.Clear;
+  Memo1.Lines.Add(ListNum.Capacity.ToString);
+end;
+
+procedure TForm1.Button12Click(Sender: TObject);
+begin
+  Memo1.Lines.Clear;
+  Memo1.Lines.Add(ListNum.Count.ToString);
+end;
+
+procedure TForm1.Button13Click(Sender: TObject);
+begin
+  ListNum.OnNotify := Notification;
 end;
 
 procedure TForm1.Button1Click(Sender: TObject);
@@ -191,6 +229,11 @@ end;
 
 
 // aula 2
+procedure TForm1.Button20Click(Sender: TObject);
+begin
+  memoaula7.Lines.Add(Fila.Capacity.ToString);
+end;
+
 procedure TForm1.Button2Click(Sender: TObject);
 var
   aux1: TMyGenericArray<string>;
@@ -265,7 +308,21 @@ end;
 
 procedure TForm1.FormCreate(Sender: TObject);
 begin
+  // aula 6
   ListNum := TList<Integer>.Create;
+
+  // aula 7
+  Fila    := TQueue<String>.Create;
+end;
+
+procedure TForm1.Notification(Sender: TObject; const Item: Integer;
+  Action: TCollectionNotification);
+begin
+ case Action of
+  cnAdded : Memo1.Lines.Add('O Item ' + Item.ToString + ' foi adicionado');
+  cnRemoved : Memo1.Lines.Add('O Item ' + Item.ToString + ' foi removido');
+  cnExtracted : Memo1.Lines.Add('O Item ' + Item.ToString + ' foi extraido');
+ end;
 end;
 
 { TEnumUtils<T> }

@@ -87,8 +87,17 @@ end;
 O evento foi criado ai
 
 --------
+7# TQueue   ( fila )  Não pode percorrer.
 
 
+enqueue ( enfilerar )
+
+Fila.Dequeue;  -- remover o próximo da lista
+fila.Extract;   -- Remove o próximo, porém ele ainda fica na memoria
+fila.TrimExcess;  --- Limpa o excesso de memória reservada.
+peek ( espiar )   fila.Peek
+count ( contar )
+capacity ( capacidade )
 -------
 
 
