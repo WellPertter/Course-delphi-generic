@@ -45,13 +45,20 @@ Aula perfect para melhorar os sistemas, verificar ela para otimizar.
 4# Métodos genéricos
 
 
-
-
-
-
 --------
+5#
+Você pode dizer que é o tipo Tperson, mas só isso não basta para acessar, pois o Tperson precisa ser instanciado
 
+usa-se construct para genéricos 
+  TNFe<T : constructor> = class   // diz que o T vai ter um construtor padrão <T : class, constructor> ( poderia ser feito assim, mas não ia aceitar tipos primitivos )
+    FGeneric : T;
+    constructor Create;
+    function GetGeneric : T;
+  end;
 
+tipo primitivos x classes 
+
+Obs: é genérico, mas nem tanto assim
 -------
 
 --------

@@ -56,6 +56,21 @@ type
     class function IIF<T>(Condition : Boolean; T1, T2 :T): T;
   end;
 
+  // aula 5
+  TPerson = class
+  private
+    Fname: string;
+    procedure Setname(const Value: string);
+  published
+    property name: string read Fname write Setname;
+  end;
+
+  TNFe<T> = class
+    FGeneric : T;
+    function GetGeneric : T;
+  end;
+
+
 
 
   TForm1 = class(TForm)
@@ -67,12 +82,14 @@ type
     Button5: TButton;
     Edit1: TEdit;
     Button6: TButton;
+    Button7: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
     procedure Button6Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -180,7 +197,12 @@ begin
   ShowMessage(prod1.FDescription + ' ' + prod2.FDescription);
 
   prod3 := TUtils.IIF<TProduct>(Assigned(prod1), prod1, TProduct.Create);
-   ShowMessage(prod3.Description);
+  ShowMessage(prod3.Description);
+end;
+
+procedure TForm1.Button7Click(Sender: TObject);
+begin
+
 end;
 
 { TEnumUtils<T> }
@@ -222,6 +244,20 @@ end;
 procedure TProduct.SetDescription(const Value: String);
 begin
   FDescription := Value;
+end;
+
+{ TPerson }
+
+procedure TPerson.Setname(const Value: string);
+begin
+  Fname := Value;
+end;
+
+{ TNFe<T> }
+
+function TNFe<T>.GetGeneric: T;
+begin
+  Result := FGeneric;
 end;
 
 end.

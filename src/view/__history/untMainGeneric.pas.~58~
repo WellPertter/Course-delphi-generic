@@ -43,11 +43,35 @@ type
 
 
   // aula 4
-
+  TProduct = class
+  private
+    FDescription: String;
+    procedure SetDescription(const Value: String);
+  published
+    constructor Create;
+    property Description : String read FDescription write SetDescription;
+  end;
 
   TUtils = class
     class function IIF<T>(Condition : Boolean; T1, T2 :T): T;
   end;
+
+  // aula 5
+  TPerson = class
+  private
+    Fname: string;
+    procedure Setname(const Value: string);
+  published
+    property name: string read Fname write Setname;
+  end;
+
+
+  TNFe<T : constructor> = class    // diz que o T vai ter um construtor padrão
+    FGeneric : T;
+    constructor Create;
+    function GetGeneric : T;
+  end;
+
 
 
 
@@ -59,11 +83,15 @@ type
     Button4: TButton;
     Button5: TButton;
     Edit1: TEdit;
+    Button6: TButton;
+    Button7: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -156,7 +184,35 @@ procedure TForm1.Button5Click(Sender: TObject);
 var
   aux: String;
 begin
-//
+ aux := TUtils.IIF<string>(Edit1.Text <> '', Edit1.Text, 'Orange');
+ ShowMessage(aux);
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);
+var
+  prod1, prod2, prod3 : TProduct;
+begin
+  prod1 := TProduct.Create;
+  prod2 := TProduct.Create;
+  prod2.SetDescription('New Product');
+
+  ShowMessage(prod1.FDescription + ' ' + prod2.FDescription);
+
+  prod3 := TUtils.IIF<TProduct>(Assigned(prod1), prod1, TProduct.Create);
+  ShowMessage(prod3.Description);
+end;
+
+procedure TForm1.Button7Click(Sender: TObject);
+var
+  NFe: TNFe<TPerson>;
+begin
+  NFe := TNFe<TPerson>.Create;
+  try
+    NFe.FGeneric.name := 'Arthur';
+    ShowMessage(NFe.FGeneric.name);
+  finally
+    NFe.Free;
+  end;
 end;
 
 { TEnumUtils<T> }
@@ -186,6 +242,37 @@ begin
   Result := T1
  else
   Result := T2;
+end;
+
+{ TProduct }
+
+constructor TProduct.Create;
+begin
+  Description := 'Product generic';
+end;
+
+procedure TProduct.SetDescription(const Value: String);
+begin
+  FDescription := Value;
+end;
+
+{ TPerson }
+
+procedure TPerson.Setname(const Value: string);
+begin
+  Fname := Value;
+end;
+
+{ TNFe<T> }
+
+constructor TNFe<T>.Create;
+begin
+  FGeneric := T.Create;
+end;
+
+function TNFe<T>.GetGeneric: T;
+begin
+  Result := FGeneric;
 end;
 
 end.
