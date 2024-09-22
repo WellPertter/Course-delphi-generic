@@ -1,7 +1,16 @@
+COMANDOS
+CRTL + SHIFT + C ( declarar a classe )
+
+CRTL + SHIFT + V ( declarar a variável )
+
+CRTL + SHIFT + A ( implementar as dependências )
+
+
+
 1#
 Delphi é orientado a objetos( tudo é uma classe )
 
-CRTL + SHIFT + C ( para criar a classe )
+
 2#
 O delphi trabalha com o NOME DOS TIPOS, pode ser igual, mas se o nome for diferente, é diferente.
 - Existe exceções{
@@ -16,3 +25,14 @@ Tempo de compilação
 Antes de gerar o executável( momento que o sistema faz o teste de sintaxe )
 
 Tempo de execução
+
+--------------------------
+3#
+Monday, Tuesday , Wednesday, Thursday, Friday, Saturday, Sunday 
+
+January, February, March, April, May, June, July, August, September, October, November, December
+
+Aula perfect para melhorar os sistemas, verificar ela para otimizar.
+
+
+-------------------------

@@ -5,11 +5,11 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.StdCtrls;
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListBox;
 
 type
 
-// <T>  significa Type( CRTL + SHIFT + C para gerar os código de baixo )   // Você especifica o nome
+// <T>  significa Type( CRTL + SHIFT + C para gerar os código de baixo )   // Você especifica o nome     1 - 2
   TKeyValue<T> = class
   private
     FKey: String;
@@ -23,8 +23,6 @@ type
 
   TMyGeneric = array [0..9] of string;
 
-
-
   TMyGenericArray<T> = class
     TArray : array [0..9] of T;
   end;
@@ -32,11 +30,29 @@ type
   TMyGenericA = TMyGenericArray<string>;
 
 
+
+  // aula 3
+
+  TDays = (Monday, Tuesday , Wednesday, Thursday, Friday, Saturday, Sunday);
+  TMonth = (January, February, March, April, May, June, July, August, September, October, November, December);
+
+  TEnumUtils<T> = class
+    class procedure EnumToList(Value: TStrings);      // pode acessar diretamente sem precisar construir a classe
+
+  end;
+
+
+
   TForm1 = class(TForm)
     Button1: TButton;
     Button2: TButton;
+    Button3: TButton;
+    ComboBox1: TComboBox;
+    Button4: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -47,6 +63,9 @@ var
   Form1: TForm1;
 
 implementation
+
+uses
+  System.TypInfo;
 
 {$R *.fmx}
 
@@ -110,6 +129,35 @@ var
   aux4: TMyGenericA;
 begin
   aux1 := aux3;
+end;
+
+procedure TForm1.Button3Click(Sender: TObject);
+begin
+  TEnumUtils<TDays>.EnumToList(ComboBox1.Items);
+end;
+
+procedure TForm1.Button4Click(Sender: TObject);
+begin
+  TEnumUtils<TMonth>.EnumToList(ComboBox1.Items);
+end;
+
+{ TEnumUtils<T> }
+
+class procedure TEnumUtils<T>.EnumToList(Value: TStrings);
+var
+  Aux: string;
+  I, Pos: Integer;
+begin
+  Value.Clear;
+  I := 0;
+
+  repeat
+    Aux := GetEnumName(TypeInfo(T), I);
+    Pos := GetEnumValue(TypeInfo(T), Aux);  // retorna -1 quando não tiver registro
+    if Pos <> -1 then Value.add(Aux);
+    Inc(I);   // I := I + 1;
+  until Pos < 0;
+
 end;
 
 end.
