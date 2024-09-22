@@ -21,11 +21,22 @@ type
     property Value: T read FValue write SetValue;
   end;
 
+  TMyGeneric = array [0..9] of string;
+
+
+
+  TMyGenericArray<T> = class
+    TArray : array [0..9] of T;
+  end;
+
+  TMyGenericA = TMyGenericArray<string>;
 
 
   TForm1 = class(TForm)
     Button1: TButton;
+    Button2: TButton;
     procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -54,9 +65,13 @@ end;
 procedure TForm1.Button1Click(Sender: TObject);
 var
   KV : TKeyValue<Integer>;
+  aux1: TMyGeneric;
+  aux2: TMyGeneric;
+  aux3: array [0..9] of string;
+  aux4: array [0..9] of string;
 begin
 
-  // Você que define o tipo da variável
+  // 1# Você que define o tipo da variável
   {KV := TKeyValue<TButton>.Create;
   try
     KV.Key   := 'F1';
@@ -65,7 +80,7 @@ begin
     ShowMessage(KV.Key + ' ' + KV.Value.Name);
   finally
     KV.Free;
-  end;   }
+  end;
   KV := TKeyValue<Integer>.Create;
   try
     KV.Key   := 'F1';
@@ -74,7 +89,27 @@ begin
     ShowMessage(KV.Key + ' ' + KV.Value.ToString);
   finally
     KV.Free;
-  end;
+  end;        }
+
+
+  // 2#
+  aux1 := aux2;
+  //aux1 := aux3; // tipos diferentes, mesmo parecendo igual
+
+
+
+end;
+
+
+// aula 2
+procedure TForm1.Button2Click(Sender: TObject);
+var
+  aux1: TMyGenericArray<string>;
+  aux2: TMyGenericArray<string>;
+  aux3: TMyGenericA;
+  aux4: TMyGenericA;
+begin
+  aux1 := aux3;
 end;
 
 end.
