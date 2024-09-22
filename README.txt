@@ -1,9 +1,15 @@
-COMANDOS
+Atalhos
 CRTL + SHIFT + C ( declarar a classe )
 
 CRTL + SHIFT + V ( declarar a variável )
 
 CRTL + SHIFT + A ( implementar as dependências )
+
+
+Comandos
+Assigned(prod1)   -- Verificar se o objeto está criado 
+Inc(I);           -- ++1
+
 
 
 
@@ -36,3 +42,31 @@ Aula perfect para melhorar os sistemas, verificar ela para otimizar.
 
 
 -------------------------
+4# Métodos genéricos
+
+
+
+
+
+
+--------
+
+
+-------
+
+--------
+
+
+-------
+
+
+--------
+
+
+-------
+
+
+
+
+
+

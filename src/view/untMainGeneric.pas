@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListBox;
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListBox, FMX.Edit;
 
 type
 
@@ -42,6 +42,21 @@ type
   end;
 
 
+  // aula 4
+  TProduct = class
+  private
+    FDescription: String;
+    procedure SetDescription(const Value: String);
+  published
+    constructor Create;
+    property Description : String read FDescription write SetDescription;
+  end;
+
+  TUtils = class
+    class function IIF<T>(Condition : Boolean; T1, T2 :T): T;
+  end;
+
+
 
   TForm1 = class(TForm)
     Button1: TButton;
@@ -49,10 +64,15 @@ type
     Button3: TButton;
     ComboBox1: TComboBox;
     Button4: TButton;
+    Button5: TButton;
+    Edit1: TEdit;
+    Button6: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
     procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -141,6 +161,28 @@ begin
   TEnumUtils<TMonth>.EnumToList(ComboBox1.Items);
 end;
 
+procedure TForm1.Button5Click(Sender: TObject);
+var
+  aux: String;
+begin
+ aux := TUtils.IIF<string>(Edit1.Text <> '', Edit1.Text, 'Orange');
+ ShowMessage(aux);
+end;
+
+procedure TForm1.Button6Click(Sender: TObject);
+var
+  prod1, prod2, prod3 : TProduct;
+begin
+  prod1 := TProduct.Create;
+  prod2 := TProduct.Create;
+  prod2.SetDescription('New Product');
+
+  ShowMessage(prod1.FDescription + ' ' + prod2.FDescription);
+
+  prod3 := TUtils.IIF<TProduct>(Assigned(prod1), prod1, TProduct.Create);
+  ShowMessage(prod3.Description);
+end;
+
 { TEnumUtils<T> }
 
 class procedure TEnumUtils<T>.EnumToList(Value: TStrings);
@@ -158,6 +200,28 @@ begin
     Inc(I);   // I := I + 1;
   until Pos < 0;
 
+end;
+
+{ TUtils }   // aula 4
+
+class function TUtils.IIF<T>(Condition: Boolean; T1, T2: T): T;
+begin
+ if Condition then
+  Result := T1
+ else
+  Result := T2;
+end;
+
+{ TProduct }
+
+constructor TProduct.Create;
+begin
+  Description := 'Product generic';
+end;
+
+procedure TProduct.SetDescription(const Value: String);
+begin
+  FDescription := Value;
 end;
 
 end.
