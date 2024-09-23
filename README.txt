@@ -11,7 +11,7 @@ Assigned(prod1)   -- Verificar se o objeto está criado
 Inc(I);           -- ++1
 pred(list.count)  -- retornar o ultimo número
 
-
+Delphi: 1995
 
 1#
 Delphi é orientado a objetos( tudo é uma classe )
@@ -117,9 +117,73 @@ capacity ( capacidade )
 09# TDictionary  (Vou usar muito)
 List : TDictionary<Key, Value>
 
+Lista : TDictionary<String, TPerson2>
 
+TPerson2 = record
+ Nome : string;
+ Cpf: string
+end;
 
+estrutura básica de um sensor 
+
+procedure KeyNotify (Sender : TObject; const Item: String; Action :TCollectionNotification);
+
+procedure TForm1.KeyNotify(Sender: TObject; const Item: String;
+  Action: TCollectionNotification);
+begin
+ case Action of
+  cnAdded : memoAula9.Lines.Add('O Item ' + Item + ' foi adicionado');
+  cnRemoved : memoAula9.Lines.Add('O Item ' + Item + ' foi removido');
+  cnExtracted : memoAula9.Lines.Add('O Item ' + Item + ' foi extraido');
+ end;
+end;
 -------
+10# Interfaces Genericas
+"Não programe para uma classe, programe orientado a interface"
+
+<> = genérico
+I = interface      
+T = class
+
+
+IQualquer<T> = interface
+ ['dsdsds']   // assinatura padrão do sistema 
+ function retorn : T;   // só pode vê o que é mais superficial
+end;
+
+TQualquer<T> = class(TInterfacedObject, IQualquer<T>)
+  function retorn : T;
+end;
+
+var
+  aux: iQualquer<string>;
+begin
+  aux := TQualquer<string>.create;       // essa classe que implementa essa interface
+end;
+
+
+-----
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

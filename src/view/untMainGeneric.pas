@@ -10,6 +10,23 @@ uses
 
 type
 
+
+  // aula 10 interfaces
+  IQualquer<T> = interface
+     procedure Add(Value: T);
+     function retorno : T;   // só pode vê o que é mais superficial
+  end;
+
+  TQualquer<T> = class(TInterfacedObject, IQualquer<T>)
+   FValue: T;
+   procedure Add(Value: T);
+   procedure duv;
+   function retorno : T;
+  end;
+
+
+
+
 // <T>  significa Type( CRTL + SHIFT + C para gerar os código de baixo )   // Você especifica o nome     1 - 2
   TKeyValue<T> = class
   private
@@ -145,6 +162,8 @@ type
     Button37: TButton;
     Button38: TButton;
     Button39: TButton;
+    TabItem5: TTabItem;
+    Button40: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -185,6 +204,7 @@ type
     procedure Button36Click(Sender: TObject);
     procedure Button38Click(Sender: TObject);
     procedure Button39Click(Sender: TObject);
+    procedure Button40Click(Sender: TObject);
   private
     { Private declarations }
 
@@ -199,6 +219,8 @@ type
 
     //Aula 9
     List : TDictionary<String, TPerson2>;
+
+
 
 
 
@@ -478,6 +500,15 @@ begin
   TEnumUtils<TDays>.EnumToList(ComboBox1.Items);
 end;
 
+procedure TForm1.Button40Click(Sender: TObject);
+var
+  aux: iQualquer<string>;
+begin
+  aux := TQualquer<string>.create;       // essa classe que implementa essa interface
+  aux.Add('José');
+  ShowMessage(aux.retorno);
+end;
+
 procedure TForm1.Button4Click(Sender: TObject);
 begin
   TEnumUtils<TMonth>.EnumToList(ComboBox1.Items);
@@ -639,6 +670,23 @@ end;
 function TNFe<T>.GetGeneric: T;
 begin
   Result := FGeneric;
+end;
+
+{ TQualquer<T> }
+
+procedure TQualquer<T>.Add(Value: T);
+begin
+  FValue := Value;
+end;
+
+procedure TQualquer<T>.duv;
+begin
+ //
+end;
+
+function TQualquer<T>.retorno: T;
+begin
+  Result := FValue;
 end;
 
 end.

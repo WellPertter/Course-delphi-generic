@@ -10,6 +10,22 @@ uses
 
 type
 
+
+  // aula 10 interfaces
+  IQualquer<T> = interface
+     procedure Add(Value: T);
+     function retorno : T;   // só pode vê o que é mais superficial
+  end;
+
+  TQualquer<T> = class(TInterfacedObject, IQualquer<T>)
+   FValue: T;
+   procedure Add(Value: T);
+   function retorno : T;
+  end;
+
+
+
+
 // <T>  significa Type( CRTL + SHIFT + C para gerar os código de baixo )   // Você especifica o nome     1 - 2
   TKeyValue<T> = class
   private
@@ -145,6 +161,7 @@ type
     Button37: TButton;
     Button38: TButton;
     Button39: TButton;
+    TabItem5: TTabItem;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -202,9 +219,11 @@ type
 
 
 
+
+
     procedure Notification (Sender : TObject; const Item: Integer; Action :TCollectionNotification);
     procedure KeyNotify (Sender : TObject; const Item: String; Action :TCollectionNotification);
-    procedure ValueNotify (Sender : TObject; const Item: String; Action :TCollectionNotification);
+    procedure ValueNotify (Sender : TObject; const Item: TPerson2; Action :TCollectionNotification);
 
   public
     { Public declarations }
@@ -571,13 +590,13 @@ begin
  end;
 end;
 
-procedure TForm1.ValueNotify(Sender: TObject; const Item: String;
+procedure TForm1.ValueNotify(Sender: TObject; const Item: TPerson2;
   Action: TCollectionNotification);
 begin
  case Action of
-  cnAdded : memoAula9.Lines.Add('O Item ' + Item + ' foi adicionado');
-  cnRemoved : memoAula9.Lines.Add('O Item ' + Item + ' foi removido');
-  cnExtracted : memoAula9.Lines.Add('O Item ' + Item + ' foi extraido');
+  cnAdded : memoAula9.Lines.Add('O Item ' + Item.nome + ' foi adicionado');
+  cnRemoved : memoAula9.Lines.Add('O Item ' + Item.nome + ' foi removido');
+  cnExtracted : memoAula9.Lines.Add('O Item ' + Item.nome + ' foi extraido');
  end;
 end;
 
@@ -639,6 +658,18 @@ end;
 function TNFe<T>.GetGeneric: T;
 begin
   Result := FGeneric;
+end;
+
+{ TQualquer<T> }
+
+procedure TQualquer<T>.Add(Value: T);
+begin
+ //
+end;
+
+function TQualquer<T>.retorno: T;
+begin
+ //
 end;
 
 end.

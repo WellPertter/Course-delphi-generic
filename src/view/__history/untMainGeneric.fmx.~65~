@@ -451,7 +451,7 @@ object Form1: TForm1
         Size.Height = 41.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 3
-        Text = 'Capacity'
+        Text = 'AddOrSetValue'
         TextSettings.Trimming = None
         OnClick = Button28Click
       end
@@ -464,6 +464,7 @@ object Form1: TForm1
         TabOrder = 4
         Text = 'ContainersValue'
         TextSettings.Trimming = None
+        OnClick = Button29Click
       end
       object Button30: TButton
         Position.X = 40.000000000000000000
@@ -474,6 +475,7 @@ object Form1: TForm1
         TabOrder = 6
         Text = 'ContainersKey'
         TextSettings.Trimming = None
+        OnClick = Button30Click
       end
       object Button31: TButton
         Position.X = 40.000000000000000000
@@ -506,6 +508,7 @@ object Form1: TForm1
         TabOrder = 12
         Text = 'TryGetValue'
         TextSettings.Trimming = None
+        OnClick = Button33Click
       end
       object Button34: TButton
         Position.X = 40.000000000000000000
@@ -562,6 +565,7 @@ object Form1: TForm1
         TabOrder = 13
         Text = 'List Key'
         TextSettings.Trimming = None
+        OnClick = Button35Click
       end
       object Button36: TButton
         Position.X = 40.000000000000000000
@@ -572,6 +576,7 @@ object Form1: TForm1
         TabOrder = 11
         Text = 'List Value'
         TextSettings.Trimming = None
+        OnClick = Button36Click
       end
       object Button37: TButton
         Position.X = 40.000000000000000000
@@ -593,6 +598,7 @@ object Form1: TForm1
         TabOrder = 7
         Text = 'OnKeyNotify'
         TextSettings.Trimming = None
+        OnClick = Button38Click
       end
       object Button39: TButton
         Position.X = 40.000000000000000000
@@ -603,6 +609,7 @@ object Form1: TForm1
         TabOrder = 5
         Text = 'OnValueNotify'
         TextSettings.Trimming = None
+        OnClick = Button39Click
       end
     end
   end
