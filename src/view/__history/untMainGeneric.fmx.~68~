@@ -1,0 +1,657 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = '.: System Generic :.'
+  ClientHeight = 554
+  ClientWidth = 965
+  Position = DesktopCenter
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object V: TTabControl
+    Align = Client
+    Size.Width = 965.000000000000000000
+    Size.Height = 554.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 5
+    TabOrder = 1
+    TabPosition = PlatformDefault
+    Sizes = (
+      965s
+      505s
+      965s
+      505s
+      965s
+      505s
+      965s
+      505s
+      965s
+      505s
+      965s
+      505s)
+    object TabItem1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 160.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Aula 1 - 6'
+      object Button1: TButton
+        Position.X = 16.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 185.000000000000000000
+        Size.Height = 65.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 13
+        Text = 'Aula 1'
+        TextSettings.Trimming = None
+        OnClick = Button1Click
+      end
+      object Button2: TButton
+        Position.X = 209.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 185.000000000000000000
+        Size.Height = 65.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 12
+        Text = 'Aula 2'
+        TextSettings.Trimming = None
+        OnClick = Button2Click
+      end
+      object Button3: TButton
+        Position.X = 416.000000000000000000
+        Position.Y = 48.000000000000000000
+        Size.Width = 136.000000000000000000
+        Size.Height = 65.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 11
+        Text = 'Aula 3 -Day'
+        TextSettings.Trimming = None
+        OnClick = Button3Click
+      end
+      object ComboBox1: TComboBox
+        Position.X = 424.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 289.000000000000000000
+        Size.Height = 32.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 14
+      end
+      object Button4: TButton
+        Position.X = 560.000000000000000000
+        Position.Y = 48.000000000000000000
+        Size.Width = 161.000000000000000000
+        Size.Height = 65.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        Text = 'Aula 3 -Month'
+        TextSettings.Trimming = None
+        OnClick = Button4Click
+      end
+      object Button5: TButton
+        Position.X = 16.000000000000000000
+        Position.Y = 120.000000000000000000
+        Size.Width = 185.000000000000000000
+        Size.Height = 65.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 10
+        Text = 'Aula 4 - Edit'
+        TextSettings.Trimming = None
+        OnClick = Button5Click
+      end
+      object Edit1: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 15
+        Position.X = 16.000000000000000000
+        Position.Y = 88.000000000000000000
+      end
+      object Button6: TButton
+        Position.X = 209.000000000000000000
+        Position.Y = 120.000000000000000000
+        Size.Width = 185.000000000000000000
+        Size.Height = 65.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 2
+        Text = 'Aula 4 - product'
+        TextSettings.Trimming = None
+        OnClick = Button6Click
+      end
+      object Button7: TButton
+        Position.X = 416.000000000000000000
+        Position.Y = 120.000000000000000000
+        Size.Width = 185.000000000000000000
+        Size.Height = 65.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        Text = 'Aula 5'
+        TextSettings.Trimming = None
+        OnClick = Button7Click
+      end
+      object Button8: TButton
+        Position.X = 32.000000000000000000
+        Position.Y = 200.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        Text = 'Aula 6 - Add'
+        TextSettings.Trimming = None
+        OnClick = Button8Click
+      end
+      object Button9: TButton
+        Position.X = 32.000000000000000000
+        Position.Y = 296.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'Aula 6 - Update'
+        TextSettings.Trimming = None
+        OnClick = Button9Click
+      end
+      object Button10: TButton
+        Position.X = 32.000000000000000000
+        Position.Y = 249.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        Text = 'Aula 6 - Remove'
+        TextSettings.Trimming = None
+        OnClick = Button10Click
+      end
+      object Button11: TButton
+        Position.X = 32.000000000000000000
+        Position.Y = 345.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = 'Aula 6 - Capacity'
+        TextSettings.Trimming = None
+        OnClick = Button11Click
+      end
+      object Button12: TButton
+        Position.X = 32.000000000000000000
+        Position.Y = 386.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'Aula 6 - Count'
+        TextSettings.Trimming = None
+        OnClick = Button12Click
+      end
+      object edtAula6: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 16
+        Position.X = 191.000000000000000000
+        Position.Y = 200.000000000000000000
+      end
+      object Memo1: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Position.X = 191.000000000000000000
+        Position.Y = 240.000000000000000000
+        Size.Width = 298.000000000000000000
+        Size.Height = 137.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 17
+        Viewport.Width = 290.000000000000000000
+        Viewport.Height = 129.000000000000000000
+      end
+      object Button13: TButton
+        Position.X = 32.000000000000000000
+        Position.Y = 428.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = 'Aula 6 - OnNotify'
+        TextSettings.Trimming = None
+        OnClick = Button13Click
+      end
+    end
+    object TabItem2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 160.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Aula 7 -TQueue'
+      object Button14: TButton
+        Position.X = 32.000000000000000000
+        Position.Y = 16.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        Text = 'ENQueue'
+        TextSettings.Trimming = None
+        OnClick = Button14Click
+      end
+      object edtaula7: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 17
+        Position.X = 191.000000000000000000
+        Position.Y = 16.000000000000000000
+      end
+      object memoaula7: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Position.X = 191.000000000000000000
+        Position.Y = 56.000000000000000000
+        Size.Width = 298.000000000000000000
+        Size.Height = 137.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 18
+        Viewport.Width = 290.000000000000000000
+        Viewport.Height = 129.000000000000000000
+      end
+      object Button15: TButton
+        Position.X = 32.000000000000000000
+        Position.Y = 57.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        Text = 'DEQueue'
+        TextSettings.Trimming = None
+        OnClick = Button15Click
+      end
+      object Button16: TButton
+        Position.X = 32.000000000000000000
+        Position.Y = 98.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        Text = 'EXQueue'
+        TextSettings.Trimming = None
+        OnClick = Button16Click
+      end
+      object Button17: TButton
+        Position.X = 32.000000000000000000
+        Position.Y = 137.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'Peek'
+        TextSettings.Trimming = None
+        OnClick = Button17Click
+      end
+      object Button18: TButton
+        Position.X = 32.000000000000000000
+        Position.Y = 178.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = 'TrimExcess'
+        TextSettings.Trimming = None
+        OnClick = Button18Click
+      end
+      object Button19: TButton
+        Position.X = 32.000000000000000000
+        Position.Y = 212.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'Count'
+        TextSettings.Trimming = None
+        OnClick = Button19Click
+      end
+      object Button20: TButton
+        Position.X = 32.000000000000000000
+        Position.Y = 261.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = 'Capacity'
+        TextSettings.Trimming = None
+        OnClick = Button20Click
+      end
+    end
+    object TabItem3: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 160.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Aula 8 - TStack'
+      object Button21: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 24.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        Text = 'Push'
+        TextSettings.Trimming = None
+        OnClick = Button21Click
+      end
+      object Button22: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 65.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        Text = 'Pop'
+        TextSettings.Trimming = None
+        OnClick = Button22Click
+      end
+      object memoAula8: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Position.X = 199.000000000000000000
+        Position.Y = 64.000000000000000000
+        Size.Width = 298.000000000000000000
+        Size.Height = 137.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 18
+        Viewport.Width = 290.000000000000000000
+        Viewport.Height = 129.000000000000000000
+      end
+      object Button23: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 145.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'Peek'
+        TextSettings.Trimming = None
+        OnClick = Button23Click
+      end
+      object Button24: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 106.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        Text = 'Extract'
+        TextSettings.Trimming = None
+        OnClick = Button24Click
+      end
+      object edtStack: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 17
+        Position.X = 199.000000000000000000
+        Position.Y = 24.000000000000000000
+      end
+      object Button25: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 186.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = 'TrimExcess'
+        TextSettings.Trimming = None
+        OnClick = Button25Click
+      end
+      object Button26: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 229.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'Count'
+        TextSettings.Trimming = None
+        OnClick = Button26Click
+      end
+      object Button27: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 269.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = 'Capacity'
+        TextSettings.Trimming = None
+        OnClick = Button27Click
+      end
+    end
+    object TabItem4: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 160.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Aula 9 - Dictonary'
+      object Button28: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 254.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 3
+        Text = 'AddOrSetValue'
+        TextSettings.Trimming = None
+        OnClick = Button28Click
+      end
+      object Button29: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 214.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 4
+        Text = 'ContainersValue'
+        TextSettings.Trimming = None
+        OnClick = Button29Click
+      end
+      object Button30: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 171.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 6
+        Text = 'ContainersKey'
+        TextSettings.Trimming = None
+        OnClick = Button30Click
+      end
+      object Button31: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 130.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 8
+        Text = 'TrimExcess'
+        TextSettings.Trimming = None
+        OnClick = Button31Click
+      end
+      object Button32: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 91.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 10
+        Text = 'Remove'
+        TextSettings.Trimming = None
+        OnClick = Button32Click
+      end
+      object Button33: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 50.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 12
+        Text = 'TryGetValue'
+        TextSettings.Trimming = None
+        OnClick = Button33Click
+      end
+      object Button34: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 8.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 14
+        Text = 'Add'
+        TextSettings.Trimming = None
+        OnClick = Button34Click
+      end
+      object memoAula9: TMemo
+        Touch.InteractiveGestures = [Pan, LongTap, DoubleTap]
+        DataDetectorTypes = []
+        Position.X = 199.000000000000000000
+        Position.Y = 64.000000000000000000
+        Size.Width = 410.000000000000000000
+        Size.Height = 177.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 24
+        Viewport.Width = 402.000000000000000000
+        Viewport.Height = 169.000000000000000000
+      end
+      object edtKey: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 23
+        Position.X = 199.000000000000000000
+        Position.Y = 24.000000000000000000
+      end
+      object edtvalue: TEdit
+        Touch.InteractiveGestures = [LongTap, DoubleTap]
+        TabOrder = 22
+        Position.X = 335.000000000000000000
+        Position.Y = 24.000000000000000000
+        object Label1: TLabel
+          Position.Y = -16.000000000000000000
+          Text = 'Value'
+          TabOrder = 20
+        end
+      end
+      object Key: TLabel
+        Position.X = 199.000000000000000000
+        Position.Y = 8.000000000000000000
+        Text = 'Key'
+        TabOrder = 25
+      end
+      object Button35: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 297.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 13
+        Text = 'List Key'
+        TextSettings.Trimming = None
+        OnClick = Button35Click
+      end
+      object Button36: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 338.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 11
+        Text = 'List Value'
+        TextSettings.Trimming = None
+        OnClick = Button36Click
+      end
+      object Button37: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 379.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 9
+        Text = 'Clear'
+        TextSettings.Trimming = None
+        OnClick = Button37Click
+      end
+      object Button38: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 418.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 7
+        Text = 'OnKeyNotify'
+        TextSettings.Trimming = None
+        OnClick = Button38Click
+      end
+      object Button39: TButton
+        Position.X = 40.000000000000000000
+        Position.Y = 459.000000000000000000
+        Size.Width = 137.000000000000000000
+        Size.Height = 41.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 5
+        Text = 'OnValueNotify'
+        TextSettings.Trimming = None
+        OnClick = Button39Click
+      end
+    end
+    object TabItem5: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = False
+      Size.Width = 160.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Aula 10 - Interface gereric'
+      object Button40: TButton
+        Position.X = 96.000000000000000000
+        Position.Y = 103.000000000000000000
+        Size.Width = 177.000000000000000000
+        Size.Height = 66.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        Text = 'Button40'
+        TextSettings.Trimming = None
+        OnClick = Button40Click
+      end
+    end
+    object TabItem6: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = True
+      Size.Width = 165.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Aula 11 - Ponteiros'
+    end
+  end
+end

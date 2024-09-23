@@ -6,7 +6,7 @@ uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
   FMX.Controls.Presentation, FMX.StdCtrls, FMX.ListBox, FMX.Edit, System.Generics.Collections,
-  FMX.Memo.Types, FMX.ScrollBox, FMX.Memo, FMX.TabControl;
+  FMX.Memo.Types, FMX.ScrollBox, FMX.Memo, FMX.TabControl, SmartPoint;
 
 type
 
@@ -164,6 +164,8 @@ type
     Button39: TButton;
     TabItem5: TTabItem;
     Button40: TButton;
+    TabItem6: TTabItem;
+    Button41: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -205,6 +207,7 @@ type
     procedure Button38Click(Sender: TObject);
     procedure Button39Click(Sender: TObject);
     procedure Button40Click(Sender: TObject);
+    procedure Button41Click(Sender: TObject);
   private
     { Private declarations }
 
@@ -509,6 +512,15 @@ begin
   ShowMessage(aux.retorno);
 end;
 
+procedure TForm1.Button41Click(Sender: TObject);
+var
+ List: TSmartPoint<TStringList>; //List: TStringList;
+begin
+  List:= TStringList.Create;
+  List.Value.Add('Teste');
+  ShowMessage('Total de registros = ' + intToStr(List.Value.Count));
+end;
+
 procedure TForm1.Button4Click(Sender: TObject);
 begin
   TEnumUtils<TMonth>.EnumToList(ComboBox1.Items);
@@ -580,6 +592,9 @@ begin
   // aula 9
   List :=  TDictionary<String, TPerson2>.Create;
 
+
+  // aula 11
+ // ReportMemoryLeaksOnShutdown := true;
 end;
 
 procedure TForm1.KeyNotify(Sender: TObject; const Item: String;

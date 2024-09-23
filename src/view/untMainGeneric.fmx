@@ -16,10 +16,12 @@ object Form1: TForm1
     Size.Height = 554.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
-    TabIndex = 4
+    TabIndex = 5
     TabOrder = 1
     TabPosition = PlatformDefault
     Sizes = (
+      965s
+      505s
       965s
       505s
       965s
@@ -36,7 +38,7 @@ object Form1: TForm1
         end>
       TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 193.000000000000000000
+      Size.Width = 160.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
@@ -224,7 +226,7 @@ object Form1: TForm1
         end>
       TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 193.000000000000000000
+      Size.Width = 160.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
@@ -332,7 +334,7 @@ object Form1: TForm1
         end>
       TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 193.000000000000000000
+      Size.Width = 160.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
@@ -440,7 +442,7 @@ object Form1: TForm1
         end>
       TextSettings.Trimming = None
       IsSelected = False
-      Size.Width = 193.000000000000000000
+      Size.Width = 160.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
@@ -619,8 +621,8 @@ object Form1: TForm1
         item
         end>
       TextSettings.Trimming = None
-      IsSelected = True
-      Size.Width = 193.000000000000000000
+      IsSelected = False
+      Size.Width = 160.000000000000000000
       Size.Height = 49.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = ''
@@ -636,6 +638,27 @@ object Form1: TForm1
         Text = 'Button40'
         TextSettings.Trimming = None
         OnClick = Button40Click
+      end
+    end
+    object TabItem6: TTabItem
+      CustomIcon = <
+        item
+        end>
+      TextSettings.Trimming = None
+      IsSelected = True
+      Size.Width = 165.000000000000000000
+      Size.Height = 49.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Aula 11 - Ponteiros'
+      object Button41: TButton
+        Position.X = 296.000000000000000000
+        Position.Y = 96.000000000000000000
+        TabOrder = 0
+        Text = 'Button41'
+        TextSettings.Trimming = None
+        OnClick = Button41Click
       end
     end
   end

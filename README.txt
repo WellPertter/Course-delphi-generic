@@ -11,6 +11,13 @@ Assigned(prod1)   -- Verificar se o objeto está criado
 Inc(I);           -- ++1
 pred(list.count)  -- retornar o ultimo número
 
+ReportMemoryLeaksOnShutdown := true;  // reportar vazamento de memoria
+
+
+
+
+
+
 Delphi: 1995
 
 1#
@@ -163,6 +170,44 @@ end;
 
 
 -----
+#11 - Ponteiros Inteligentes
+
+ReportMemoryLeaksOnShutdown := true;  // reportar vazamento de memoria
+
+
+  TSmartPoint<T: class> = record
+   strict private
+      Fvalue: T;
+      function GetValue : T;
+   public
+      constructor Create(aValue: T);
+      property Value: T read GetValue;
+  end;
+
+  TFreeThevalue = class (TinterfacedObject)
+    private
+      fObjectToFree: TObject;
+    public
+      constructor Create(anObjectTofree: Tobject);
+      destructor Destroy; override;
+  end;
+
+
+class operator Impricit(smrt: TSmartPoint <T>): T;
+class operator Impricit(AValue: T): TSmartPoint <T>;
+
+
+operator ( operadores de classe )
+
+Result := TSmartPoint <T>.Create(AValue);
+
+Result := smart.Value
+
+
+
+
+
+
 
 
 

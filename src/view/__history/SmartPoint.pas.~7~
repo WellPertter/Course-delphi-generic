@@ -1,0 +1,50 @@
+unit SmartPoint;
+
+interface
+
+type
+  TSmartPoint<T: class> = record
+   strict private
+      Fvalue: T;
+      function GetValue : T;
+   public
+      constructor Create(aValue: T);
+      property Value: T read GetValue;
+  end;
+
+  TFreeThevalue = class (TinterfacedObject)
+    private
+      fObjectToFree: TObject;
+    public
+      constructor Create(anObjectTofree: Tobject);
+      destructor Destroy; override;
+  end;
+
+implementation
+
+{ TSmartPoint<T> }
+
+constructor TSmartPoint<T>.Create(aValue: T);
+begin
+  Fvalue := aValue;
+end;
+
+function TSmartPoint<T>.GetValue: T;
+begin
+  Result := Fvalue;
+end;
+
+{ TFreeThevalue }
+
+constructor TFreeThevalue.Create(anObjectTofree: Tobject);
+begin
+  fObjectToFree :=  anObjectTofree;
+end;
+
+destructor TFreeThevalue.Destroy;
+begin
+
+  inherited;
+end;
+
+end.
