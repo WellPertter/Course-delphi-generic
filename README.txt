@@ -114,6 +114,9 @@ count ( contar )
 capacity ( capacidade )
 
 --------
+09# TDictionary  (Vou usar muito)
+List : TDictionary<Key, Value>
+
 
 
 -------

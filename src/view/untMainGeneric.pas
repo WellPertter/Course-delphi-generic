@@ -80,11 +80,15 @@ type
   // Aula 06 Tlist
   // TList<type>  - é genérioc e já está disponível
 
-
+ // Classe teste aula 9
+ TPerson2 = record
+   Nome : string;
+   Cpf: string
+  end;
 
 
   TForm1 = class(TForm)
-    TabControl1: TTabControl;
+    V: TTabControl;
     TabItem1: TTabItem;
     TabItem2: TTabItem;
     Button1: TButton;
@@ -123,6 +127,24 @@ type
     Button25: TButton;
     Button26: TButton;
     Button27: TButton;
+    TabItem4: TTabItem;
+    Button28: TButton;
+    Button29: TButton;
+    Button30: TButton;
+    Button31: TButton;
+    Button32: TButton;
+    Button33: TButton;
+    Button34: TButton;
+    memoAula9: TMemo;
+    edtKey: TEdit;
+    edtvalue: TEdit;
+    Key: TLabel;
+    Label1: TLabel;
+    Button35: TButton;
+    Button36: TButton;
+    Button37: TButton;
+    Button38: TButton;
+    Button39: TButton;
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
     procedure Button3Click(Sender: TObject);
@@ -151,6 +173,18 @@ type
     procedure Button27Click(Sender: TObject);
     procedure Button24Click(Sender: TObject);
     procedure Button25Click(Sender: TObject);
+    procedure Button34Click(Sender: TObject);
+    procedure Button37Click(Sender: TObject);
+    procedure Button31Click(Sender: TObject);
+    procedure Button32Click(Sender: TObject);
+    procedure Button28Click(Sender: TObject);
+    procedure Button33Click(Sender: TObject);
+    procedure Button30Click(Sender: TObject);
+    procedure Button29Click(Sender: TObject);
+    procedure Button35Click(Sender: TObject);
+    procedure Button36Click(Sender: TObject);
+    procedure Button38Click(Sender: TObject);
+    procedure Button39Click(Sender: TObject);
   private
     { Private declarations }
 
@@ -163,9 +197,14 @@ type
     // aula 8
     pilha: TStack<string>;
 
+    //Aula 9
+    List : TDictionary<String, TPerson2>;
+
+
 
     procedure Notification (Sender : TObject; const Item: Integer; Action :TCollectionNotification);
-
+    procedure KeyNotify (Sender : TObject; const Item: String; Action :TCollectionNotification);
+    procedure ValueNotify (Sender : TObject; const Item: TPerson2; Action :TCollectionNotification);
 
   public
     { Public declarations }
@@ -325,6 +364,28 @@ begin
   memoAula8.Lines.Add(pilha.Capacity.ToString);
 end;
 
+procedure TForm1.Button28Click(Sender: TObject);
+var
+ Person : TPerson2;
+begin
+  Person.Nome := edtvalue.Text;
+  Person.Cpf  := edtKey.text;
+
+  List.AddOrSetValue(edtKey.Text, Person);
+end;
+
+procedure TForm1.Button29Click(Sender: TObject);
+var
+ Person : TPerson2;
+begin
+
+  if List.TryGetValue(edtKey.Text, Person) then
+    memoAula9.Lines.Add('Sim o registro existe!')   // a classe poderia ter mais atributos ( nome, sobrenome, etc)
+  else
+    memoAula9.Lines.Add('Registro não encontrado.');
+end;
+
+
 procedure TForm1.Button2Click(Sender: TObject);
 var
   aux1: TMyGenericArray<string>;
@@ -333,6 +394,83 @@ var
   aux4: TMyGenericA;
 begin
   aux1 := aux3;
+end;
+
+procedure TForm1.Button30Click(Sender: TObject);
+var
+ Person : TPerson2;
+begin
+  if List.ContainsKey(edtKey.Text) then
+    memoAula9.Lines.Add('Sim, essa chave existe!')   // a classe poderia ter mais atributos ( nome, sobrenome, etc)
+  else
+    memoAula9.Lines.Add('Registro não encontrado.');
+end;
+
+procedure TForm1.Button31Click(Sender: TObject);
+begin
+  list.TrimExcess;
+end;
+
+procedure TForm1.Button32Click(Sender: TObject);
+begin
+  List.Remove(edtKey.Text);
+end;
+
+procedure TForm1.Button33Click(Sender: TObject);
+var
+ Person : TPerson2;
+begin
+  //Person.Nome := edtvalue.Text;
+  //Person.Cpf  := edtKey.text;
+
+  if List.TryGetValue(edtKey.Text, Person) then
+    memoAula9.Lines.Add(edtKey.Text + ' - ' + Person.nome)   // a classe poderia ter mais atributos ( nome, sobrenome, etc)
+  else
+    memoAula9.Lines.Add('Registro não encontrado.');
+end;
+
+procedure TForm1.Button34Click(Sender: TObject);
+var
+ Person : TPerson2;
+begin
+  Person.Nome := edtvalue.Text;
+  Person.Cpf  := edtKey.text;
+
+  List.Add(edtKey.Text, Person);
+
+end;
+
+procedure TForm1.Button35Click(Sender: TObject);
+var
+  Key: string;
+begin
+  for Key in List.Keys do
+    memoAula9.Lines.Add(Key);
+
+end;
+
+procedure TForm1.Button36Click(Sender: TObject);
+var
+  value: TPerson2;
+begin
+  for value in List.Values do
+    memoAula9.Lines.Add(value.Nome);
+
+end;
+
+procedure TForm1.Button37Click(Sender: TObject);
+begin
+  List.Clear;
+end;
+
+procedure TForm1.Button38Click(Sender: TObject);
+begin
+  List.OnKeyNotify := KeyNotify;
+end;
+
+procedure TForm1.Button39Click(Sender: TObject);
+begin
+  List.OnValueNotify := ValueNotify;
 end;
 
 procedure TForm1.Button3Click(Sender: TObject);
@@ -407,6 +545,20 @@ begin
 
   // Aula 8
   pilha   := TStack<string>.Create;
+
+  // aula 9
+  List :=  TDictionary<String, TPerson2>.Create;
+
+end;
+
+procedure TForm1.KeyNotify(Sender: TObject; const Item: String;
+  Action: TCollectionNotification);
+begin
+ case Action of
+  cnAdded : memoAula9.Lines.Add('O Item ' + Item + ' foi adicionado');
+  cnRemoved : memoAula9.Lines.Add('O Item ' + Item + ' foi removido');
+  cnExtracted : memoAula9.Lines.Add('O Item ' + Item + ' foi extraido');
+ end;
 end;
 
 procedure TForm1.Notification(Sender: TObject; const Item: Integer;
@@ -416,6 +568,16 @@ begin
   cnAdded : Memo1.Lines.Add('O Item ' + Item.ToString + ' foi adicionado');
   cnRemoved : Memo1.Lines.Add('O Item ' + Item.ToString + ' foi removido');
   cnExtracted : Memo1.Lines.Add('O Item ' + Item.ToString + ' foi extraido');
+ end;
+end;
+
+procedure TForm1.ValueNotify(Sender: TObject; const Item: TPerson2;
+  Action: TCollectionNotification);
+begin
+ case Action of
+  cnAdded : memoAula9.Lines.Add('O Item ' + Item.nome + ' foi adicionado');
+  cnRemoved : memoAula9.Lines.Add('O Item ' + Item.nome + ' foi removido');
+  cnExtracted : memoAula9.Lines.Add('O Item ' + Item.nome + ' foi extraido');
  end;
 end;
 
